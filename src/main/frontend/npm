@@ -1,0 +1,5 @@
+#! /bin/bash
+
+node_install=../../../.node_cache
+PATH="$node_install/node/":$PATH
+node "$node_install/node/node_modules/npm/bin/npm-cli.js" "$@"

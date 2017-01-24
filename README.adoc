@@ -1,0 +1,46 @@
+= MyFolder
+
+== How to dev
+
+=== Java
+
+Java is used with a plain Meecrowave (JAX-RS/CDI) for the backend
+
+To start a server:
+
+[source]
+----
+mvn process-classes meecrowave:run
+----
+
+=== Frontend
+
+Frontend is an Angular 2 application, to watch (continously update) the front use:
+
+[source]
+----
+# run once
+mvn frontend:npm@npm-install
+# watch
+mvn frontend:npm@dev
+----
+
+=== Build
+
+The build will package the application as a jar and create a runner version:
+
+[source]
+----
+mvn clean install
+cd target && \
+  java -jar myfolder-1.0-SNAPSHOT-runner.jar
+----
+
+Then just hit http://localhost:8080
+
+Note: by default application uses `~/.myfolder` but you can change it on the command line:
+
+[source]
+----
+java -jar myfolder-1.0-SNAPSHOT-runner.jar --myfolder-folder=$HOME
+----

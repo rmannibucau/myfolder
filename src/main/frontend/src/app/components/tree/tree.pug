@@ -1,0 +1,7 @@
+div.tree-wrapper
+div.file-content
+  ul(*ngIf="detail")
+    li File {{detail.path}}
+    li Exists {{detail.exists.toString()}}
+    li Is directory {{detail.directory.toString()}}
+    li(*ngIf="!detail.directory") Size (b) {{detail.length}}
